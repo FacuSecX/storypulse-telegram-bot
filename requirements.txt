@@ -1,0 +1,5 @@
+python-telegram-bot[job-queue]==22.8
+playwright
+requests
+pillow
+python-dotenv

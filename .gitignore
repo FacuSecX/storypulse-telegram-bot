@@ -1,0 +1,45 @@
+# Secretos y configuración privada
+.env
+.env.*
+!.env.example
+accounts.json
+
+# Bases de datos y estado local
+data/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Sesiones, cookies y autenticación
+sessions/
+cookies/
+*.session
+*.cookies
+
+# Descargas y depuración
+historias_descargadas/
+publicaciones_*/
+debug_*.html
+debug_*.png
+screenshots/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# IDE y sistema operativo
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
