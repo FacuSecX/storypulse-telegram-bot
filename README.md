@@ -1,5 +1,5 @@
 <p align="center">
-<img src="[img]http://imgfz.com/i/BaRozI6.png[/img]" title="KitHack">
+<img src="[img]http://imgfz.com/i/BaRozI6.png[/img]" title="StoryPulse">
 </p>
 
 <p align="center">
