@@ -1,8 +1,33 @@
-# StoryPulse Telegram Bot
+<p align="center">
+<img src="[img]http://imgfz.com/i/BaRozI6.png[/img]" title="KitHack">
+</p>
 
+<p align="center">
+<a href="https://github.com/FacuSecX"><img title="Autor" src="https://img.shields.io/badge/Author-Facu%20-blue?style=for-the-badge&logo=github"></a>
+<a href=""><img title="Version" src="https://img.shields.io/badge/Version-1.0-red?style=for-the-badge&logo="></a>
+</p>
+
+<p align="center">
+<a href=""><img title="System" src="https://img.shields.io/badge/Supported%20OS-Linux-orange?style=for-the-badge&logo=linux"></a>
+<a href="https://paypal.me/FacuSecX"><img title="Paypal" src="https://img.shields.io/badge/Donate-PayPal-green.svg?style=for-the-badge&logo=paypal"></a>
+</p>
+
+<p align="center">
+<a href="mailto:facusex@gmail.com"><img title="Correo" src="https://img.shields.io/badge/Correo-facusecX@gmail.com-blueviolet?style=for-the-badge&logo=gmai"></a>
+<a href="https://t.me/FacuSecX"><img title="Chat" src="https://img.shields.io/badge/CHAT-TELEGRAM-blue?style=for-thjlje-badge&logo=telegram"></a>
+</p>
+
+
+
+
+
+# StoryPulse Telegram Bot
 Bot de Telegram para consultar historias y publicaciones de perfiles públicos de Instagram mediante servicios web intermediarios, programar revisiones automáticas y recibir alertas configurables por perfil.
 
 > **Importante:** el proyecto no utiliza credenciales de Instagram. Depende de páginas intermediarias públicas, por lo que puede dejar de funcionar si esos sitios cambian su estructura, limitan el acceso o desaparecen.
+
+
+
 
 ## Funciones
 
