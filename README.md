@@ -73,6 +73,95 @@ storypulse-telegram-bot/
 └── .github/workflows/ci.yml
 ```
 
+
+
+## ¿Por qué usar servicios intermediarios en lugar de Instaloader?
+
+StoryPulse consulta contenido público mediante páginas intermediarias, en lugar de conectarse directamente a Instagram con una cuenta autenticada.
+
+Este enfoque fue elegido para reducir la complejidad del proyecto y evitar los problemas habituales que aparecen al mantener una sesión de Instagram activa dentro de un bot funcionando las 24 horas.
+
+### Ventajas de este enfoque
+
+- No requiere iniciar sesión en Instagram.
+- No solicita usuario, contraseña ni código de autenticación en dos pasos.
+- No almacena cookies ni archivos de sesión de Instagram.
+- No expone una cuenta personal al funcionamiento continuo del bot.
+- Reduce la posibilidad de recibir checkpoints o solicitudes de confirmación.
+- Evita tener que renovar sesiones vencidas periódicamente.
+- Facilita la instalación en VPS, servidores y computadoras nuevas.
+- Permite mover el proyecto entre equipos sin transferir credenciales de Instagram.
+- Separa completamente la cuenta personal del sistema de automatización.
+- Puede consultar perfiles públicos sin necesidad de que una cuenta los siga.
+- Una restricción aplicada al servidor no compromete directamente una cuenta personal.
+- La configuración es más sencilla para usuarios sin experiencia con autenticación, cookies o sesiones.
+
+### Comparación con Instaloader y librerías similares
+
+| Característica | StoryPulse con intermediario | Instaloader con autenticación |
+|---|---:|---:|
+| Requiere cuenta de Instagram | No | Generalmente sí |
+| Requiere contraseña | No | Sí, durante el inicio de sesión |
+| Puede requerir código 2FA | No | Sí |
+| Guarda cookies o sesión | No | Sí |
+| Puede recibir checkpoints | Menor exposición directa | Sí |
+| Riesgo para una cuenta personal | Bajo | Mayor |
+| Instalación en un VPS | Más sencilla | Puede requerir validaciones |
+| Cambio de servidor o IP | No afecta una sesión personal | Puede invalidar la sesión |
+| Acceso a perfiles privados | No | Solo si la cuenta tiene acceso |
+| Metadatos estructurados | Limitados por el intermediario | Más completos |
+| Calidad de las imágenes | Depende del intermediario | Puede ser mejor |
+| Dependencia de cambios externos | Sí, del sitio intermediario | Sí, de Instagram |
+
+### Problemas habituales al usar autenticación directa
+
+Cuando una librería se conecta directamente a Instagram desde un VPS, pueden aparecer situaciones como:
+
+- inicio de sesión detectado desde una ubicación nueva;
+- solicitud de confirmación desde la aplicación oficial;
+- checkpoint de seguridad;
+- código de autenticación en dos pasos;
+- sesión invalidada por cambio de IP;
+- restricciones temporales por cantidad de solicitudes;
+- bloqueo de una IP perteneciente a un centro de datos;
+- necesidad de volver a generar el archivo de sesión;
+- riesgo de afectar la cuenta utilizada por el bot.
+
+StoryPulse evita almacenar este tipo de credenciales y delega la consulta pública al servicio intermediario configurado.
+
+### Limitaciones del uso de intermediarios
+
+Este método también tiene algunas desventajas importantes:
+
+- El proyecto depende de que la página intermediaria continúe funcionando.
+- Los selectores HTML pueden cambiar y requerir una actualización del scraper.
+- La calidad de las fotografías depende de la resolución entregada por la página.
+- Algunos servicios pueden mostrar publicidad o ventanas emergentes.
+- Puede existir una demora adicional respecto de una consulta directa.
+- Los metadatos disponibles pueden ser menos completos.
+- No permite acceder a perfiles privados.
+- No garantiza disponibilidad permanente del contenido.
+- Un cambio en el sitio intermediario puede detener temporalmente las consultas.
+
+### Objetivo del proyecto
+
+StoryPulse no busca reemplazar la API oficial de Instagram ni acceder a contenido privado.
+
+Su objetivo es ofrecer una herramienta sencilla para:
+
+- consultar contenido público;
+- automatizar revisiones periódicas;
+- detectar nuevas historias;
+- evitar envíos duplicados;
+- recibir resultados mediante Telegram;
+- configurar alertas sonoras por perfil;
+- funcionar sin almacenar credenciales de Instagram.
+
+> StoryPulse debe utilizarse únicamente para consultar contenido público y respetando las condiciones de los servicios utilizados.
+
+
+
+
 ## Requisitos
 
 - Python 3.10 o superior.
